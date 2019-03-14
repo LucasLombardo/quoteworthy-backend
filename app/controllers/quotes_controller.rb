@@ -14,7 +14,7 @@ def post_netlify_webhook
 end
 
 class QuotesController < OpenReadController
-  before_action :set_quote, only: [:show, :update, :destroy]
+  before_action :set_quote, only: [:show, :update, :destroy] 
 
   # GET /quotes
   def index
@@ -34,7 +34,9 @@ class QuotesController < OpenReadController
     if @quote.save
       render json: @quote, status: :created, location: @quote
       # trigger front end build with new data
-      post_netlify_webhook if Rails.env.production?
+      Thread.new do
+        post_netlify_webhook if Rails.env.production?
+      end
     else
       render json: @quote.errors, status: :unprocessable_entity
     end
@@ -45,7 +47,9 @@ class QuotesController < OpenReadController
     if @quote.update(quote_params)
       render json: @quote
       # trigger front end build with new data
-      post_netlify_webhook if Rails.env.production?
+      Thread.new do
+        post_netlify_webhook if Rails.env.production?
+      end
     else
       render json: @quote.errors, status: :unprocessable_entity
     end
@@ -55,7 +59,9 @@ class QuotesController < OpenReadController
   def destroy
     @quote.destroy
     # trigger front end build with new data
-    post_netlify_webhook if Rails.env.production?
+      Thread.new do
+        post_netlify_webhook if Rails.env.production?
+      end
   end
 
   private
