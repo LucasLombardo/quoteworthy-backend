@@ -1,6 +1,4 @@
-# Quoteworthy Frontend
-
-# Quoteworthy Frontend
+# Quoteworthy Backend
 
 Quoteworthy is a progressive web app for collecting and discovering excellent quotes. The app allows users to create accounts, log in, and add new quotes to the public quote feed. Once a quote is created they can edit or delete it later if they change their mind about it.
 
