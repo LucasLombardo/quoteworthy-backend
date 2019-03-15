@@ -14,7 +14,7 @@ Technologies used were JavaScript, Ruby on Rails, React, GatsbyJS, and styled co
 
 The web app was build using the JAMstack architechture, or JavaScript, APIs, and Prebuilt Markup. One of the key benefits of JAMstack apps and websites is that they are very fast since most of the content is served as prebuilt markup.
 
-The front end of the app is built with GatsbyJS, a static site generation framework for React. When the site is being built or generated, Gatsby uses GraphQL to query all of the current quotes from the backend API (rails) and generate static HTML markup with the data. 
+The front end of the app is built with GatsbyJS, a static site generation framework for React that supports progressive web apps. When the site is being built or generated, Gatsby uses GraphQL to query all of the current quotes from the backend API (rails) and generate static HTML markup with the data. 
 
 When a user loads the website, they are served the static data while clientside JavaScript sends AJAX requests and compares the static data with the latest data in Rails, adjusting the current quotes on the page once the query is complete. All non GET requests are run on the client side, allowing users to sign in/up and interact with the quotes.
 
