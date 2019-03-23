@@ -1,4 +1,4 @@
 class AttributionSerializer < ActiveModel::Serializer
   attributes :id, :name
-  has_one :quote
+  has_many :quotes
 end
